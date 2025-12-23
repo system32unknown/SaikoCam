@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rendered Saiko Image</title>
+        <meta http-equiv="refresh" content="5">
+    </head>
+    <body style="background:#111;color:white;text-align:center">
+        <h2>Rendered Saiko Image:</h2>
+        <% if (imagePath) { %>
+            <img src="<%= imagePath %>" alt="Uploaded Image" style="max-width: 400px;">
+        <% } else { %>
+            <p>Image not found.</p>
+        <% } %>
+    </body>
+</html>
