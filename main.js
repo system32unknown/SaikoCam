@@ -12,6 +12,8 @@ app.use(express.urlencoded({extended: true})); // parse URL-encoded request bodi
 app.use(express.json()); // parse JSON request bodies
 app.use(express.static(__dirname + '/public')); // serve static files from a directory
 
+app.use('/uploads', express.static('uploads'));
+
 const uploadDir = "./uploads";
 
 // Multer config
@@ -44,6 +46,7 @@ app.post("/upload", upload.single("image"), (req, res) => {
     console.log("Received file:", imageUrl);
     uploaded_img = imageUrl;
 });
+
 app.get('/favicon.ico', (_, res) => res.status(204).end());
 
 app.listen(PORT, () => console.log(`App listening at http://localhost:${PORT}`));
